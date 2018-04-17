@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<!--<a href="/add">Add a car</a>
+<div th:each="aCar:${cars}">
+    <span th:text="${aCar.brand}"></span>
+    <span th:text="${aCar.model}"></span>
+    <span th:text="${aCar.color}"></span>
+    <span th:text="${aCar.image}"></span>
+    <span th:text="${aCar.available}?'Available':Unavailable'" th:href="@{/changestatus/{id}(id=${aCar.id})}"></span>
+    <span><a th:href="@{/update/{id}(id=${aCar.id})}">Update</a></span>-->
+
+<a href="/add">Add a car</a>
+<div th:each="eachCar:${cars}">
+    <span style="align-content: inherit"><a th:text="${eachCar.brand}"></a></span>
+    <span><p th:text="${eachCar.model}"></p></span>
+    <span><p th:text="${eachCar.color}"></p></span>
+    <span><p th:text="${eachCar.image}"></p></span>
+    <span><a th:text="${eachCar.available}?'Rent'" th:href="@{/changestatus/{id}(id=${eachCar.id})}"></a></span>
+    <span><a th:href="@{/update/{id}(id=${eachCar.id})}">Update</a></span>
+</div>
+</body>
+</html>
