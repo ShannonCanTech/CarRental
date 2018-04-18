@@ -1,26 +1,95 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Car Rental Web App</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/stylish-portfolio.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 </head>
-<body>
-<h1>Add a car</h1>
+<body id="page-top">
+<!-- Header -->
+<header class="masthead d-flex shannon">
+    <div class="container text-center my-auto">
+        <h1 class="mb-1">Car Rental Web App</h1>
+        <h3 class="mb-5">
+            <em>Add A Car</em>
+        </h3>
+        <form action="/savecar" th:object="${aCar}" method="post" class="form-inline input-group mb-3 shannon-form form">
+            <div class="container">
+                <div class="main-form">
+                    <div class="form-row">
+                        <input type="hidden" th:field="*{id}">
 
-<form action="/savecar" th:object="${aCar}" method="post">
-    <input type="hidden" th:field="*{id}">
+                        <div class="col-md-3 col-sm-3">
+                            <div class="form-group">
+                                <label for="brand" class="col-form-label"></label>  <input type="text" th:field="*{brand}" class="form-control" placeholder="Enter Car Brand">
+                            </div>
+                        </div>
 
-    <label for="brand">Enter Car Brand</label>  <input type="text" th:field="*{brand}">
+                        <div class="col-md-3 col-sm-3">
+                            <div class="form-group">
+                                <label for="model"></label>  <input type="text" th:field="*{model}" class="form-control" placeholder="Enter Car Model">
+                            </div>
+                        </div>
 
-    <label for="model">Enter Car Model</label>  <input type="text" th:field="*{model}">
+                        <div class="col-md-3 col-sm-3">
+                            <div class="form-group">
+                                <label for="color"></label>  <input type="text" th:field="*{color}" class="form-control" placeholder="Enter Car Color">
+                            </div>
+                        </div>
 
-    <label for="color">Enter Car Color</label>  <input type="text" th:field="*{color}">
+                        <div class="col-md-3 col-sm-3">
+                            <div class="form-group">
+                                <label for="image"></label>  <input type="text" th:field="*{image}" class="form-control" placeholder="Enter Car Image">
+                            </div>
+                        </div>
+                    </div>
 
-    <label for="image">Enter Car Image</label>  <input type="text" th:field="*{image}">
+                    <div class="form-row">
+                        <div class="col-6">
+                            <div class="form-group form-check form-check-inline">
+                                <label for="available" class="form-check-label">Available?</label>    <input type="checkbox" th:field="*{available}" th:check="*{available}" class="form-check-input">
+                            </div>
+                        </div>
 
-    <label for="available">Available?</label>    <input type="checkbox" th:field="*{available}" th:check="*{available}">
-    <button type="submit">Save</button>
-</form>
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-primary width-100">Save</button>
+                        </div>
+                    </div>
 
+                </div>
+            </div>
+    </div>
+    </form>
+    <!--<a class="btn btn-primary btn-xl" href="/add">Add a car</a>-->
+    </div>
+    <div class="overlay"></div>
+</header>
+
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/stylish-portfolio.min.js"></script>
 </body>
 </html>

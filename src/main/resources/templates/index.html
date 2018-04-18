@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Car Rental Web App</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/stylish-portfolio.min.css" rel="stylesheet">
 </head>
-<body>
+<body id="page-top">
 <!--<a href="/add">Add a car</a>
 <div th:each="aCar:${cars}">
     <span th:text="${aCar.brand}"></span>
@@ -14,14 +29,21 @@
     <span th:text="${aCar.available}?'Available':Unavailable'" th:href="@{/changestatus/{id}(id=${aCar.id})}"></span>
     <span><a th:href="@{/update/{id}(id=${aCar.id})}">Update</a></span>-->
 
-<a href="/add">Add a car</a>
-<div th:each="eachCar:${cars}">
-    <span style="align-content: inherit"><a th:text="${eachCar.brand}"></a></span>
-    <span><p th:text="${eachCar.model}"></p></span>
-    <span><p th:text="${eachCar.color}"></p></span>
-    <span><img th:src="${eachCar.image}"></span>
-    <span><a th:text="${eachCar.available}?'Available For Rent'" th:href="@{/changestatus/{id}(id=${eachCar.id})}"></a></span>
-    <span><a th:href="@{/update/{id}(id=${eachCar.id})}">Update</a></span>
-</div>
+<!-- Header -->
+<header class="masthead d-flex">
+    <div class="container text-center my-auto">
+        <h1 class="mb-1">Car Rental Web App</h1>
+        <a class="btn btn-primary btn-xl" href="/add">Add a car</a>
+    </div>
+    <div class="overlay"></div>
+</header>
+<!--<div th:each="eachCar:${cars}">-->
+    <!--<span style="align-content: inherit"><a th:text="${eachCar.brand}"></a></span>-->
+    <!--<span><p th:text="${eachCar.model}"></p></span>-->
+    <!--<span><p th:text="${eachCar.color}"></p></span>-->
+    <!--<span><img th:src="${eachCar.image}"></span>-->
+    <!--<span><a th:text="${eachCar.available}?'Available For Rent'" th:href="@{/changestatus/{id}(id=${eachCar.id})}"></a></span>-->
+    <!--<span><a th:href="@{/update/{id}(id=${eachCar.id})}">Update</a></span>-->
+<!--</div>-->
 </body>
 </html>

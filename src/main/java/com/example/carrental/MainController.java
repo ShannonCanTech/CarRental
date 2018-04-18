@@ -31,6 +31,13 @@ public class MainController {
         return "addcar";
     }
 
+    @RequestMapping("/cars")
+    public String showCars(Model model)
+    {
+        model.addAttribute("cars",carRepo.findAll());
+        return "carlist";
+    }
+
     @PostMapping("/savecar")
     public String saveCar(@Valid @ModelAttribute("car") Car car, BindingResult result)
     {
@@ -40,7 +47,7 @@ public class MainController {
             return "addcar";
         }
         carRepo.save(car);
-        return "redirect:/";
+        return "redirect:cars";
     }
 
     @RequestMapping("/changestatus/{id}")
@@ -50,13 +57,13 @@ public class MainController {
 
         thisCar.setAvailable(!thisCar.isAvailable());
         carRepo.save(thisCar);
-        return "redirect:/";
+        return "redirect:cars";
     }
 
     @RequestMapping("/update/{id}")
     public String updateCar(@PathVariable("id") long id, Model model)
     {
-        model.addAttribute("aCar",carRepo.findById(id));
+        model.addAttribute("aCar",carRepo.findById(id).get());
         return "addcar";
     }
 }
