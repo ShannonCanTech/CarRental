@@ -1,0 +1,39 @@
+.form.shannon-form {
+	padding-top: 10rem;
+	font-size: 1.4rem;
+}
+
+.width-100 {
+	width: 100% !important;
+}
+
+.form.shannon-form{
+	padding-top: 1rem;
+}
+
+.form.shannon-form.main-form.form-group{
+	position:relative;
+}
+
+.form-inline .form-group{
+	margin-bottom: 1.5rem;
+}
+
+.form.shannon-form [type="submit"]{
+	padding: .5rem .6rem;
+}
+
+.btn {
+	display: inline-block;
+	position: relative;
+	font-size: 1.6rem;
+	font-weight: 500px;
+}
+
+body {
+	color:#fff;
+}
+
+#sidebar-wrapper {
+	background: rgba(187, 187, 187, 0.3);
+}
